@@ -1,0 +1,6 @@
+@ExtractCssValuesToJson_HostAddress = http://localhost:5015
+
+# GET {{ExtractCssValuesToJson_HostAddress}}/weatherforecast/
+# Accept: application/json
+
+###
