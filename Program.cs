@@ -1,3 +1,4 @@
+using ExtractCssValuesToJson.Middlewares;
 using ExtractCssValuesToJson.Repositories;
 using ExtractCssValuesToJson.Services;
 using Infrastructure.Context;
@@ -9,15 +10,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors();
+var cors = builder.Configuration.GetSection("Cors");
+
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(policy => {
+        policy
+            .WithOrigins("http://localhost:5173", "https://localhost:5173", "http://localhost:6011", "https://localhost:6011")
+            .WithMethods("POST");
+    });
+});
+
 builder.Services.AddDbContext<SQLiteDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// #region Service and Repository Configurations
 builder.Services.AddScoped<IHomeService, HomeService>();
 builder.Services.AddScoped<ILogRequestRepository, LogRequestRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-// #endregion
 
 var app = builder.Build();
 
@@ -26,12 +34,8 @@ if (app.Environment.IsDevelopment()) {
     app.UseSwaggerUI();
 }
 
-app.UseCors(c => {
-    c.AllowAnyHeader();
-    c.AllowAnyMethod();
-    c.AllowAnyOrigin();
-});
-
+app.UseCors();
+app.UseMiddleware<ErrorMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();

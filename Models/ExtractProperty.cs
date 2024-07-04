@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
-using ExtractCssValuesToJson.Models;
 
-namespace ExtractCssValuesToJson.Services {
+namespace ExtractCssValuesToJson.Models {
     public class ExtractProperty {
         private readonly string cssContent;
         private readonly List<FormatConfigCss> mappings;
@@ -30,7 +29,8 @@ namespace ExtractCssValuesToJson.Services {
                 Match match = Regex.Match(cssContent, pattern, RegexOptions.Singleline);
 
                 if (!match.Success) {
-                    throw new Exception();
+                    string idMessage = $"Identificador {className} não encontrado!";
+                    throw new Exception($"{fileName}: {idMessage}");
                 }
 
                 string contentMatch = match.Groups[1].Value;
