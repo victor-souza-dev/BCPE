@@ -1,14 +1,23 @@
+using ExtractCssValuesToJson.Repositories;
 using ExtractCssValuesToJson.Services;
 using Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IHomeService, HomeService>();
+
 builder.Services.AddCors();
-builder.Services.AddDbContext<SQLiteDbContext>();
+builder.Services.AddDbContext<SQLiteDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// #region Service and Repository Configurations
+builder.Services.AddScoped<IHomeService, HomeService>();
+builder.Services.AddScoped<ILogRequestRepository, LogRequestRepository>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+// #endregion
 
 var app = builder.Build();
 

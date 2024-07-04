@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ExtractCssValuesToJson.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Context;
 
@@ -10,5 +11,5 @@ public class SQLiteDbContext : DbContext {
         base.OnModelCreating(modelBuilder);
     }
 
-    //public DbSet<User> User { get; set; }
+    public DbSet<LogRequest> LogRequest { get; set; }
 }
