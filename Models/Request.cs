@@ -10,7 +10,7 @@ namespace ExtractCssValuesToJson.Models {
         public List<FormatConfigCss> Configs { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
-            if (Archives.Count > 3) {
+            if (Archives.Count > 1000) {
                 yield return new ValidationResult(
                     "The number of files must be between 1 and 1000.",
                     new[] { nameof(Archives) });
