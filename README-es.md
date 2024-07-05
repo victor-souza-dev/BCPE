@@ -16,6 +16,10 @@
 ## 🌟 Propósito de la Aplicación
 Imagina que tienes un conjunto de archivos CSS que siguen un modelo de estilización repetitivo, donde las clases y la estructura son consistentes, pero los valores varían. Ahora, imagina que necesitas extraer valores específicos de estas clases en varios archivos CSS. Esta aplicación fue creada precisamente para eso: te permite definir tu modelo a través de una interfaz gráfica y recibir un archivo zip con todos los valores CSS formateados en JSON, según la estructura que especifiques.
 
+> [Use el Diagrama del Caso](https://app.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=use_case_diagram.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fvictor-souza-dev%2FBCPE%2Fmain%2Fdocs%2Fuse_case_diagram.drawio)
+
+<br />
+
 ## ✨ Funcionalidades
 - 🖥️ .NET 8.0.6: Plataforma de desarrollo para crear aplicaciones de alto rendimiento.
 - 🛠️ Entity Framework: ORM para la manipulación eficiente de datos y el mapeo objeto-relacional.
