@@ -26,8 +26,8 @@ Para comenzar con el proyecto BCPE API, sigue los siguientes pasos:
 
 1. Clona el repositorio:
 ```csharp
-git clone https://github.com/your-username/bcpe-api.git
-cd bcpe-api
+git clone https://github.com/victor-souza-dev/BCPE.git
+cd bcpe
 ```
 
 2. Configura la base de datos:
