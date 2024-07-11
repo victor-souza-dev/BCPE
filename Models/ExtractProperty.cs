@@ -29,7 +29,7 @@ namespace ExtractCssValuesToJson.Models {
                 Match match = Regex.Match(cssContent, pattern, RegexOptions.Singleline);
 
                 if (!match.Success) {
-                    string idMessage = $"Identificador {className} não encontrado!";
+                    string idMessage = $"Identifier {className} not found!";
                     throw new Exception($"{fileName}: {idMessage}");
                 }
 
@@ -51,7 +51,7 @@ namespace ExtractCssValuesToJson.Models {
                 }
             } catch(Exception ex) {
                 bool propMessage = ex.Message.Contains("Propriedade");
-                string idMessage = $"Identificador {className} não encontrado!";
+                string idMessage = $"Identifier {className} not found!";
                 string message = propMessage ? ex.Message : idMessage;
 
                 throw new Exception($"{fileName}: {message}");
@@ -67,7 +67,7 @@ namespace ExtractCssValuesToJson.Models {
                 string prop = matchProp.Groups[1].Value.Trim();
                 keyValuePairs[index] = prop;
             } else {
-                throw new Exception($"Propriedade {propertyName} não encontrado ou inválido!");
+                throw new Exception($"Property {propertyName} not found or invalid!");
             }
         }
 
@@ -79,7 +79,7 @@ namespace ExtractCssValuesToJson.Models {
                 string prop = matchProp.Groups[1].Value.Replace(" ", "").Trim();
                 keyValuePairs[index] = prop;
             } else {
-                throw new Exception($"Propriedade background-color não encontrado ou inválido!");
+                throw new Exception($"Property background-color not found or invalid!");
             }
 
         }
@@ -92,7 +92,7 @@ namespace ExtractCssValuesToJson.Models {
                 string prop = matchProp.Groups[1].Value.Replace("\"Roboto\"", "").Replace(" ", "").Trim();
                 keyValuePairs[index] = prop;
             } else {
-                throw new Exception($"Propriedade fonte-family não encontrado ou inválido!");
+                throw new Exception($"Property fonte-family not found or invalid!");
             }
         }
 
@@ -105,7 +105,7 @@ namespace ExtractCssValuesToJson.Models {
                 string prop = matchProp.Groups[1].Value.Replace("!important", "").Trim();
                 keyValuePairs[index] = prop;
             } else {
-                throw new Exception("Propriedade color não encontrado ou inválido!");
+                throw new Exception("Property color not found or invalid!");
             }
         }
     }
