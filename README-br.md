@@ -16,6 +16,10 @@ Bem-vindo ao projeto BCPE API! Esta é uma aplicação backend desenvolvida em C
 ## 🌟 Propósito da Aplicação
 Imagine que você possui um conjunto de arquivos CSS que seguem um modelo de estilização repetitivo, onde as classes e a estrutura são consistentes, mas os valores variam. Agora, imagine que você precisa extrair valores específicos dessas classes em diversos arquivos CSS. Essa aplicação foi criada exatamente para isso: ela permite que você defina seu modelo através de uma interface gráfica e receba um arquivo zip contendo todos os valores CSS formatados em JSON, de acordo com a estrutura que você especificar.
 
+> [Diagrama de casos de uso](https://app.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=use_case_diagram.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fvictor-souza-dev%2FBCPE%2Fmain%2Fdocs%2Fuse_case_diagram.drawio)
+
+<br />
+
 ## ✨ Funcionalidades
 - .NET 8.0.6: Plataforma de desenvolvimento para criar aplicativos de alto desempenho.
 - Entity Framework: ORM para manipulação eficiente de dados e mapeamento objeto-relacional.
