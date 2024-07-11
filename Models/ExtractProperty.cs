@@ -50,7 +50,7 @@ namespace ExtractCssValuesToJson.Models {
                         break;
                 }
             } catch(Exception ex) {
-                bool propMessage = ex.Message.Contains("Propriedade");
+                bool propMessage = ex.Message.Contains("Property");
                 string idMessage = $"Identifier {className} not found!";
                 string message = propMessage ? ex.Message : idMessage;
 
